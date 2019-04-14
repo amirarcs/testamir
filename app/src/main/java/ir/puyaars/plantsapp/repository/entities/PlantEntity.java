@@ -8,6 +8,7 @@ import java.util.List;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+
 @Entity(tableName = "plants")
 public class PlantEntity {
 

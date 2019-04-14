@@ -3,19 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="16dip"
+    android:layout_marginBottom="16dip"
+    android:background="#7f7f7f7f">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/tileImage"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="96dip"
         android:contentDescription="plant image"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:layout_marginRight="12dip"
+        android:layout_marginLeft="12dip"
+        android:paddingTop="8dip"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tileText"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text = "puyaars is a good boy"
-        />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dip"
+        android:layout_marginBottom="8dip">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tileTextEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dip"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dip"
+            android:textStyle="bold"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
 </androidx.appcompat.widget.LinearLayoutCompat>

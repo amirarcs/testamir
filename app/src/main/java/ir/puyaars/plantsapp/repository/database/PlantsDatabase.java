@@ -9,6 +9,7 @@ import androidx.room.TypeConverters;
 import ir.puyaars.plantsapp.repository.entities.PlantEntity;
 
 
+
 @Database(entities = {PlantEntity.class}, version = 1,exportSchema = false)
 @TypeConverters(DataConverter.class)
 public abstract class PlantsDatabase extends RoomDatabase {

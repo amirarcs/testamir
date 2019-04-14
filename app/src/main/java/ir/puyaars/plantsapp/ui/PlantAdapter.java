@@ -68,30 +68,35 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.PlantHolder>
 
         AppCompatImageView imageView;
 
-        AppCompatTextView textView;
+        AppCompatTextView name;
+        AppCompatTextView nameEn;
+      //  AppCompatTextView identifity;
 
         public PlantHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.tileImage);
-            textView = itemView.findViewById(R.id.tileText);
+            name = itemView.findViewById(R.id.tileText);
+            nameEn = itemView.findViewById(R.id.tileTextEn);
+           // identifity = itemView.findViewById(R.id.identity);
         }
 
         public void configureWith(PlantEntity plantEntity, Context mContext) {
             // TODO Update ui
-            if (plantEntity.getImage() != null) {
-                if (!plantEntity.getImage().equals("")) {
+           if (plantEntity.getCommonName() != null) {
+                if (!plantEntity.getCommonName().equals("")) {
                     imageView.setImageBitmap(getBitmapFromAssets(
-                            plantEntity.getImage(),
-                            mContext
+                            plantEntity.getCommonName(), mContext
                     ));
                 }
                 imageView.setVisibility(View.VISIBLE);
             } else {
                 imageView.setVisibility(View.GONE);
             }
-
-            textView.setText(plantEntity.getName());
+            Log.i("tag",plantEntity.getCommonName());
+            name.setText(plantEntity.getName());
+            nameEn.setText(plantEntity.getEnName());
+          //  identifity.setText(plantEntity.getIdentity());
 
             this.itemView.setOnClickListener(v -> {
                 Intent i = new Intent(mContext, PlantActivity.class);
